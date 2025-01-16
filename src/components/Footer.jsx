@@ -2,6 +2,17 @@ import React from "react";
 import { Github, Instagram, Linkedin, Mail, MapPin } from "lucide-react";
 
 const Footer = () => {
+  const handleEmailClick = () => {
+    // Open Gmail in a new tab
+    const gmailTab = window.open(
+      "https://mail.google.com/mail/?view=cm&fs=1&to=contact@codestorm.org&su=&body=",
+      "_blank"
+    );
+
+    // After opening Gmail, navigate to the next page (this will happen in the current tab)
+    window.location.href = "/next-page"; // Replace with your target URL
+  };
+
   return (
     <footer className="bg-storm-dark pt-16 pb-8">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -17,7 +28,12 @@ const Footer = () => {
             <div className="space-y-2">
               <div className="flex items-center text-gray-400">
                 <Mail className="w-4 h-4 mr-2 text-neon" />
-                <a href="mailto:contact@codestorm.org">contact@codestorm.org</a>
+                <button
+                  onClick={handleEmailClick}
+                  className="text-gray-400 hover:text-neon"
+                >
+                  contact@codestorm.org
+                </button>
               </div>
               <div className="flex items-center text-gray-400">
                 <MapPin className="w-4 h-4 mr-2 text-neon" />
