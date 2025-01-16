@@ -1,0 +1,58 @@
+.form-button {
+  /* background-color: rgb(57 255 20 / var(--tw-bg-opacity, 1)); */
+  font-size: 30px;
+
+  color: white;
+  /* border: rgb(57 255 20 / var(--tw-bg-opacity, 1)) solid 1px; */
+  text-decoration-line: underline;
+  text-underline-offset: 0.3em;
+  text-decoration-color: rgb(57 255 20 / var(--tw-bg-opacity, 1));
+  padding: 14px 20px;
+  margin: 8px 0px 1px;
+  cursor: pointer;
+  width: auto;
+  font-weight: bold;
+}
+
+.connectsec,
+.contactsec {
+  padding: 40px;
+}
+
+.teamcontainer {
+  padding: 30px;
+}
+
+.button-container {
+  text-align: center;
+  display: flex;
+  justify-content: center;
+}
+
+/* Fade Animation */
+.fade-enter {
+  opacity: 0;
+  transform: translateY(-10px);
+}
+
+.fade-enter-active {
+  opacity: 1;
+  transform: translateY(0);
+  transition: opacity 300ms, transform 300ms;
+}
+
+.fade-exit {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.fade-exit-active {
+  opacity: 0;
+  transform: translateY(10px);
+  transition: opacity 300ms, transform 300ms;
+}
+
+.welcome {
+  display: flex;
+  justify-content: space-between;
+}

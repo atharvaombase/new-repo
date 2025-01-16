@@ -1,7 +1,9 @@
 import React from "react";
 import { Menu, X, Code2, Github, Instagram, Linkedin } from "lucide-react";
+// import { DynamicIcon } from "lucide-react/dynamic";
+// import { GitHubAlt } from 'lucide-react';
 
-const Navbar = () => {
+const Navbar = ({ events, setEvent }) => {
   const [isOpen, setIsOpen] = React.useState(false);
 
   return (
@@ -34,31 +36,39 @@ const Navbar = () => {
                   Team
                 </a>
                 <a
-                  href="#join"
+                  href="#connect"
                   className="text-gray-300 hover:text-neon px-3 py-2 rounded-md text-sm font-medium"
                 >
-                  Join Us
-                </a>
-                <a
-                  href="#contact"
-                  className="text-gray-300 hover:text-neon px-3 py-2 rounded-md text-sm font-medium"
-                >
-                  Contact
+                  Contact us
                 </a>
               </div>
             </div>
           </div>
           <div className="hidden md:flex items-center space-x-4">
-            <a href=""
-             className="text-gray-300 hover:text-neon">
-              <Github className="h-5 w-5" />
+            <a
+              href=""
+              className="text-gray-300 hover:text-neon"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <Github className="h-7 w-7" />
             </a>
-            <a href="https://www.instagram.com/codestorm_official/" 
-              className="text-gray-300 hover:text-neon">
-              <Instagram className="h-5 w-5" />
+            <a
+              href="https://www.instagram.com/codestorm_official/"
+              className="text-gray-300 hover:text-neon"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <Instagram className="h-7 w-7" />
+              {/* <DynamicIcon name="Instagram" color="red" size={48} />{" "} */}
             </a>
-            <a href="https://www.linkedin.com/company/codestorm-club-mescoe/posts/?feedView=all" className="text-gray-300 hover:text-neon">
-              <Linkedin className="h-5 w-5" />
+            <a
+              href="https://www.linkedin.com/company/codestorm-club-mescoe/posts/?feedView=all"
+              className="text-gray-300 hover:text-neon"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <Linkedin className="h-7 w-7" />
             </a>
           </div>
           <div className="md:hidden flex items-center">
@@ -75,7 +85,7 @@ const Navbar = () => {
           </div>
         </div>
       </div>
-      
+
       {isOpen && (
         <div className="md:hidden">
           <div className="px-2 pt-2 pb-3 space-y-1 sm:px-3">
