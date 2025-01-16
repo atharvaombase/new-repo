@@ -1,10 +1,25 @@
-import React from "react";
+import React, { useEffect } from "react";
+import { Link, useNavigate, useLocation } from "react-router-dom";
 import { Menu, X, Code2, Github, Instagram, Linkedin } from "lucide-react";
-// import { DynamicIcon } from "lucide-react/dynamic";
-// import { GitHubAlt } from 'lucide-react';
 
-const Navbar = ({ events, setEvent }) => {
+const Navbar = ({ events, setEvents }) => {
   const [isOpen, setIsOpen] = React.useState(false);
+  const navigate = useNavigate();
+  const location = useLocation();
+
+  useEffect(() => {
+    if (location.hash) {
+      const element = document.getElementById(location.hash.substring(1));
+      if (element) {
+        element.scrollIntoView({ behavior: "smooth" });
+      }
+    }
+  }, [location]);
+
+  const handleNavigation = (path, hash) => {
+    navigate(path + hash);
+    setIsOpen(false);
+  };
 
   return (
     <nav className="bg-storm-dark border-b border-neon/20">
@@ -17,30 +32,32 @@ const Navbar = ({ events, setEvent }) => {
 
             <div className="hidden md:block">
               <div className="ml-10 flex items-baseline space-x-4">
-                <a
-                  href="#"
+                <Link
+                  to="/"
                   className="text-neon hover:bg-storm-light px-3 py-2 rounded-md text-sm font-medium"
                 >
                   Home
-                </a>
+                </Link>
                 <a
                   href="#events"
+                  onClick={() => handleNavigation("/", "#events")}
                   className="text-gray-300 hover:text-neon px-3 py-2 rounded-md text-sm font-medium"
                 >
                   Events
                 </a>
                 <a
                   href="#team"
+                  onClick={() => handleNavigation("/", "#team")}
                   className="text-gray-300 hover:text-neon px-3 py-2 rounded-md text-sm font-medium"
                 >
                   Team
                 </a>
-                <a
-                  href="#connect"
+                <Link
+                  to="/forms"
                   className="text-gray-300 hover:text-neon px-3 py-2 rounded-md text-sm font-medium"
                 >
                   Contact us
-                </a>
+                </Link>
               </div>
             </div>
           </div>
@@ -60,7 +77,6 @@ const Navbar = ({ events, setEvent }) => {
               rel="noopener noreferrer"
             >
               <Instagram className="h-7 w-7" />
-              {/* <DynamicIcon name="Instagram" color="red" size={48} />{" "} */}
             </a>
             <a
               href="https://www.linkedin.com/company/codestorm-club-mescoe/posts/?feedView=all"
@@ -89,36 +105,34 @@ const Navbar = ({ events, setEvent }) => {
       {isOpen && (
         <div className="md:hidden">
           <div className="px-2 pt-2 pb-3 space-y-1 sm:px-3">
-            <a
-              href="#"
+            <Link
+              to="/"
               className="text-neon block px-3 py-2 rounded-md text-base font-medium"
+              onClick={() => setIsOpen(false)}
             >
               Home
-            </a>
+            </Link>
             <a
               href="#events"
+              onClick={() => handleNavigation("/", "#events")}
               className="text-gray-300 hover:text-neon block px-3 py-2 rounded-md text-base font-medium"
             >
               Events
             </a>
             <a
               href="#team"
+              onClick={() => handleNavigation("/", "#team")}
               className="text-gray-300 hover:text-neon block px-3 py-2 rounded-md text-base font-medium"
             >
               Team
             </a>
-            <a
-              href="#join"
+            <Link
+              to="/forms"
               className="text-gray-300 hover:text-neon block px-3 py-2 rounded-md text-base font-medium"
+              onClick={() => setIsOpen(false)}
             >
-              Join Us
-            </a>
-            <a
-              href="#contact"
-              className="text-gray-300 hover:text-neon block px-3 py-2 rounded-md text-base font-medium"
-            >
-              Contact
-            </a>
+              Contact us
+            </Link>
           </div>
         </div>
       )}

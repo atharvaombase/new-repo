@@ -1,4 +1,5 @@
 import React from "react";
+import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 import Navbar from "./components/Navbar";
 import Hero from "./components/Hero";
 import Events from "./components/events/Events";
@@ -9,15 +10,38 @@ import FormContainer from "./components/forms/FormContainer";
 function App() {
   const [events, setEvents] = React.useState("contact");
   return (
-    <div className="min-h-screen bg-storm-darker">
-      <Navbar events={events} setEvents={setEvents} />
-      <Hero />
-      <Events />
-      <Team />
-      <hr className="my-8 border-neon" /> {/* Add this line */}
-      <FormContainer events={events} setEvents={setEvents}></FormContainer>
-      <Footer />
-    </div>
+    <Router>
+      <div className="min-h-screen bg-storm-darker">
+        <Navbar events={events} setEvents={setEvents} />
+        <Routes>
+          <Route
+            path="/"
+            element={
+              <>
+                <Hero />
+                <Events />
+                <Team />
+              </>
+            }
+          />
+          <Route
+            path="/team /events"
+            element={
+              <>
+                <Hero />
+                <Events />
+                <Team />
+              </>
+            }
+          />
+          <Route
+            path="/forms"
+            element={<FormContainer events={events} setEvents={setEvents} />}
+          />
+        </Routes>
+        <Footer />
+      </div>
+    </Router>
   );
 }
 
