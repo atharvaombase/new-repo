@@ -16,7 +16,7 @@ const TeamMember = ({ name, role, imageUrl, github, linkedin, instagram }) => {
               rel="noopener noreferrer"
               className="text-gray-400 hover:text-neon"
             >
-              <Github className="w-5 h-5" />
+              <Github className="w-5 h-5" />  
             </a>
           )}
           {linkedin && (
