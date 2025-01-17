@@ -27,10 +27,13 @@ function App() {
               </>
             }
           />
-          <Route path="/team/events" element={<FormContainer />} />
+          <Route
+            path="/forms"
+            element={<FormContainer events={events} setEvents={setEvents} />}
+          />
         </Routes>
-        <AdSense adSlot="ca-pub-3198706909969680" />
         <Footer />
+        <AdSense adSlot="ca-pub-3198706909969680" />
       </div>
     </Router>
   );

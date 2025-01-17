@@ -8,15 +8,15 @@ const JoinForm = () => {
     year: "",
     department: "",
     motivation: "",
-    experience: ""
+    experience: "",
   });
   const [status, setStatus] = useState({ type: "", message: "" });
 
   const handleChange = (e) => {
     const { name, value } = e.target;
-    setFormData(prevData => ({
+    setFormData((prevData) => ({
       ...prevData,
-      [name]: value
+      [name]: value,
     }));
   };
 
@@ -25,29 +25,38 @@ const JoinForm = () => {
     setStatus({ type: "loading", message: "Submitting application..." });
 
     try {
-      const response = await fetch('http://localhost:5000/api/join', {
-        method: 'POST',
+      const response = await fetch("http://localhost:5000/api/join", {
+        method: "POST",
         headers: {
-          'Content-Type': 'application/json',
+          "Content-Type": "application/json",
         },
-        body: JSON.stringify(formData)
+        body: JSON.stringify(formData),
       });
 
       if (response.ok) {
-        setStatus({ type: "success", message: "Application submitted successfully!" });
+        setStatus({
+          type: "success",
+          message: "Application submitted successfully!",
+        });
         setFormData({
           name: "",
           email: "",
           year: "",
           department: "",
           motivation: "",
-          experience: ""
+          experience: "",
         });
       } else {
-        setStatus({ type: "error", message: "Failed to submit application. Please try again." });
+        setStatus({
+          type: "error",
+          message: "Failed to submit application. Please try again.",
+        });
       }
     } catch (error) {
-      setStatus({ type: "error", message: "An error occurred. Please try again later." });
+      setStatus({
+        type: "error",
+        message: "An error occurred. Please try again later.",
+      });
       console.error("Submission error:", error);
     }
   };
@@ -55,14 +64,19 @@ const JoinForm = () => {
   return (
     <form onSubmit={handleSubmit} className="space-y-6">
       {status.message && (
-        <div className={`p-4 rounded-md ${
-          status.type === "success" ? "bg-green-800/50 text-green-200" : 
-          status.type === "error" ? "bg-red-800/50 text-red-200" : ""
-        }`}>
+        <div
+          className={`p-4 rounded-md ${
+            status.type === "success"
+              ? "bg-green-800/50 text-green-200"
+              : status.type === "error"
+              ? "bg-red-800/50 text-red-200"
+              : ""
+          }`}
+        >
           {status.message}
         </div>
       )}
-      
+
       <div>
         <label className="block text-sm font-medium text-gray-300 mb-1">
           Full Name

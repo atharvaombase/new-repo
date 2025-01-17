@@ -6,14 +6,14 @@ const ContactForm = () => {
     name: "",
     email: "",
     subject: "",
-    message: ""
+    message: "",
   });
   const [status, setStatus] = useState({ type: "", message: "" });
 
   const handleChange = (e) => {
     setFormData({
       ...formData,
-      [e.target.name]: e.target.value
+      [e.target.name]: e.target.value,
     });
   };
 
@@ -22,22 +22,28 @@ const ContactForm = () => {
     setStatus({ type: "loading", message: "Sending message..." });
 
     try {
-      const response = await fetch('http://localhost:5000/api/contact', {
-        method: 'POST',
+      const response = await fetch("http://localhost:5000/api/contact", {
+        method: "POST",
         headers: {
-          'Content-Type': 'application/json',
+          "Content-Type": "application/json",
         },
-        body: JSON.stringify(formData)
+        body: JSON.stringify(formData),
       });
 
       if (response.ok) {
         setStatus({ type: "success", message: "Message sent successfully!" });
         setFormData({ name: "", email: "", subject: "", message: "" });
       } else {
-        setStatus({ type: "error", message: "Failed to send message. Please try again." });
+        setStatus({
+          type: "error",
+          message: "Failed to send message. Please try again.",
+        });
       }
     } catch (error) {
-      setStatus({ type: "error", message: "An error occurred. Please try again later." });
+      setStatus({
+        type: "error",
+        message: "An error occurred. Please try again later.",
+      });
     }
   };
 
@@ -96,7 +102,11 @@ const ContactForm = () => {
         />
       </div>
       {status.message && (
-        <div className={`text-sm ${status.type === "error" ? "text-red-500" : "text-green-500"}`}>
+        <div
+          className={`text-sm ${
+            status.type === "error" ? "text-red-500" : "text-green-500"
+          }`}
+        >
           {status.message}
         </div>
       )}
