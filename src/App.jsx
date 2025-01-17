@@ -20,9 +20,9 @@ function App() {
             element={
               <>
                 <Hero />
-                <AdSense adSlot="YOUR_AD_SLOT_ID" />
+                <AdSense adSlot="ca-pub-3198706909969680" />
                 <Events />
-                <AdSense adSlot="YOUR_AD_SLOT_ID" />
+                <AdSense adSlot="ca-pub-3198706909969680" />
                 <Team />
               </>
             }
