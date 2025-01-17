@@ -13,12 +13,12 @@ const Hero = () => {
   const [isAnimating, setIsAnimating] = useState(false);
 
   const images = [
-    "/src/assets/hero_image/t1.jpg",
-    "/src/assets/hero_image/t2.jpg",
-    "/src/assets/hero_image/t3.jpg",
-    "/src/assets/hero_image/t4.jpg",
-    "/src/assets/hero_image/t5.jpg",
-    "/src/assets/hero_image/t6.jpg",
+    "/assets/hero_image/t1.jpg",
+    "/assets/hero_image/t2.jpg",
+    "/assets/hero_image/t3.jpg",
+    "/assets/hero_image/t4.jpg",
+    "/assets/hero_image/t5.jpg",
+    "/assets/hero_image/t6.jpg",
   ];
 
   // Preload images

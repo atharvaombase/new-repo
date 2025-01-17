@@ -6,7 +6,7 @@ const Team = () => {
     {
       name: "Aditya Konde",
       role: "President",
-      imageUrl: "/src/assets/images/President.jpg",
+      imageUrl: "/assets/images/Aditya_Konde.jpg", // Updated path
 
       linkedin:
         "https://www.linkedin.com/in/adityakonde?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app",
@@ -16,7 +16,7 @@ const Team = () => {
     {
       name: "Nikita Choudhary",
       role: "Vice President",
-      imageUrl: "/src/assets/images/VicePresident.jpg",
+      imageUrl: "/assets/images/Nikita.jpg", // Updated path
 
       linkedin: "https://www.linkedin.com/in/nikita-choudhary2005",
       instagram: "",
@@ -24,7 +24,7 @@ const Team = () => {
     {
       name: "Aditya Raje",
       role: "Technical Team",
-      imageUrl: "/src/assets/images/Aditya_Raje.jpg",
+      imageUrl: "/assets/images/Aditya_Raje.jpg", // Updated path
 
       linkedin: "https://linkedin.com",
       instagram: "https://www.instagram.com/a_y_r_0906/",
@@ -32,7 +32,7 @@ const Team = () => {
     {
       name: "Atharva Ombase",
       role: "Technical Team",
-      imageUrl: "/src/assets/images/Atharva.jpg",
+      imageUrl: "/assets/images/Atharva.jpg", // Updated path
 
       linkedin:
         "https://www.linkedin.com/in/atharva-ombase-203a53239?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app",
@@ -41,7 +41,7 @@ const Team = () => {
     {
       name: "Kalhan Koul",
       role: "Social Media Head",
-      imageUrl: "/src/assets/images/Kalhan.jpg",
+      imageUrl: "/assets/images/Kalhan.jpg", // Updated path
 
       linkedin:
         "https://www.linkedin.com/in/kalhan-koul-b85251298?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app",
@@ -51,7 +51,7 @@ const Team = () => {
     {
       name: "Vinay Kotwal",
       role: "Event Management Head",
-      imageUrl: "/src/assets/images/vinay.jpg",
+      imageUrl: "/assets/images/Vinay.jpg", // Updated path
 
       linkedin:
         "https://www.linkedin.com/in/vinay-kotwal718?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app",
@@ -60,7 +60,7 @@ const Team = () => {
     {
       name: "Nida Pathan",
       role: "Event Management Team",
-      imageUrl: "/src/assets/images/img1.jpg",
+      imageUrl: "/assets/images/Nida.jpg", // Updated path
 
       linkedin: "https://www.linkedin.com/in/nida-pathan-98b315289/",
       instagram: "https://www.instagram.com/nida_pathan10/",
@@ -68,7 +68,7 @@ const Team = () => {
     {
       name: "Virendra Patil",
       role: "Event Management Team",
-      imageUrl: "/src/assets/images/virendra.jpg",
+      imageUrl: "/assets/images/Virendra.jpg", // Updated path
 
       linkedin: "https://www.linkedin.com/in/virendra-patil-069399299",
       instagram: "https://www.instagram.com/virendra_100_/",
@@ -76,7 +76,7 @@ const Team = () => {
     {
       name: "Pranav Khatade",
       role: "Design Head",
-      imageUrl: "/src/assets/images/pranav.jpg",
+      imageUrl: "/assets/images/Pranav.jpg", // Updated path
 
       linkedin:
         "https://www.linkedin.com/in/pranav-khatade?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app",
@@ -85,7 +85,7 @@ const Team = () => {
     {
       name: "Anvesha Goyadani",
       role: "Design Team",
-      imageUrl: "/src/assets/images/anvesha.jpg",
+      imageUrl: "/assets/images/Anvesha.jpg", // Updated path
 
       linkedin:
         "https://www.linkedin.com/in/anvesha-goydani-b7b774293?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app",
@@ -95,6 +95,7 @@ const Team = () => {
 
     // Add more team members here
   ];
+
   return (
     <section id="team" className="py-12 bg-storm-dark teamcontainer">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">

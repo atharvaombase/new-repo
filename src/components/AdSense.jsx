@@ -11,7 +11,7 @@ const AdSense = ({ adSlot }) => {
     <ins
       className="adsbygoogle"
       style={{ display: "block" }}
-      data-ad-client="YOUR_AD_CLIENT_ID"
+      data-ad-client="ca-pub-3198706909969680"
       data-ad-slot={adSlot}
       data-ad-format="auto"
       data-full-width-responsive="true"
@@ -20,6 +20,3 @@ const AdSense = ({ adSlot }) => {
 };
 
 export default AdSense;
-
-
-

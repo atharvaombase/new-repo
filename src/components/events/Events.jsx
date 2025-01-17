@@ -1,7 +1,6 @@
 import React from "react";
 import EventCard from "./EventCard";
 
-
 const Events = () => {
   const upcomingEvents = [
     {
@@ -32,7 +31,7 @@ const Events = () => {
       description:
         "Sharpen your logical thinking and problem-solving skills in this interactive session.",
       imageUrl:
-        "https://images.unsplash.com/photo-1573497019527-00055f593d87?auto=format&fit=crop&q=80&w=1000",
+        "https://media.istockphoto.com/id/183794221/photo/connection-hands-trying-to-fit-two-puzzle-pieces-together.jpg?s=1024x1024&w=is&k=20&c=iQP-GjWw_B7ydg8qnLrA2MHevLH9VU0qFW_j2O2wu7o=",
     },
   ];
 
@@ -68,7 +67,7 @@ const Events = () => {
             Upcoming Events
           </span>
         </h2>
-        
+
         <div className="grid md:grid-cols-2 gap-28 mb-16">
           {upcomingEvents.map((event, index) => (
             <EventCard key={index} {...event} />
