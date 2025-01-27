@@ -44,20 +44,29 @@ const Footer = () => {
           <div>
             <h3 className="text-white font-bold text-lg mb-4">Follow Us</h3>
             <div className="flex space-x-4">
-              <a href="#" className="text-gray-400 hover:text-neon">
-                <Github className="w-6 h-6" />
+              <a
+                href=""
+                className="text-gray-300 hover:text-neon"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <Github className="h-7 w-7" />
               </a>
               <a
                 href="https://www.instagram.com/codestorm_official/"
-                className="text-gray-400 hover:text-neon"
+                className="text-gray-300 hover:text-neon"
+                target="_blank"
+                rel="noopener noreferrer"
               >
-                <Instagram className="w-6 h-6" />
+                <Instagram className="h-7 w-7" />
               </a>
               <a
                 href="https://www.linkedin.com/company/codestorm-club-mescoe/posts/?feedView=all"
-                className="text-gray-400 hover:text-neon"
+                className="text-gray-300 hover:text-neon"
+                target="_blank"
+                rel="noopener noreferrer"
               >
-                <Linkedin className="w-6 h-6" />
+                <Linkedin className="h-7 w-7" />
               </a>
             </div>
           </div>
