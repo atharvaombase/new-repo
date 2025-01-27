@@ -47,10 +47,16 @@ const Footer = () => {
               <a href="#" className="text-gray-400 hover:text-neon">
                 <Github className="w-6 h-6" />
               </a>
-              <a href="#" className="text-gray-400 hover:text-neon">
+              <a
+                href="https://www.instagram.com/codestorm_official/"
+                className="text-gray-400 hover:text-neon"
+              >
                 <Instagram className="w-6 h-6" />
               </a>
-              <a href="#" className="text-gray-400 hover:text-neon">
+              <a
+                href="https://www.linkedin.com/company/codestorm-club-mescoe/posts/?feedView=all"
+                className="text-gray-400 hover:text-neon"
+              >
                 <Linkedin className="w-6 h-6" />
               </a>
             </div>
