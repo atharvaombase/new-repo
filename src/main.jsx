@@ -4,15 +4,16 @@ import "./index.css";
 import App from "./components/routes/App.jsx";
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import FormContainer from "./components/forms/FormContainer";
+import { path } from "framer-motion/client";
 import Homepage from "./components/routes/Homepage.jsx";
 
 const router = createBrowserRouter([
   {
     path: "/",
-    element: <App />, // Keeps navbar, footer, etc.
+    element: <App />,
     children: [
-      { path: "home", element: <Homepage /> }, // Use /home for homepage
-      { path: "forms", element: <FormContainer /> },
+      { path: "/", element: <Homepage /> },
+      { path: "/forms", element: <FormContainer /> },
     ],
   },
 ]);
