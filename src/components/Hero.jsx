@@ -50,7 +50,6 @@ const Hero = () => {
     [isAnimating, images.length]
   );
 
-  // Auto change image every 4 seconds
   useEffect(() => {
     const interval = setInterval(() => {
       if (!isAnimating) {
@@ -134,6 +133,7 @@ const Hero = () => {
                 <div className="rounded-md shadow">
                   <Link
                     to="/forms"
+                    state={{ action: "join" }}
                     className="w-full flex items-center justify-center px-8 py-3 border border-transparent text-base font-medium rounded-md text-black bg-neon hover:bg-neon-dark md:py-4 md:text-lg md:px-10"
                   >
                     Join Us

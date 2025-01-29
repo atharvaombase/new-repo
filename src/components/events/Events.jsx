@@ -43,8 +43,7 @@ const Events = () => {
       location: "Open Grounds",
       description:
         "An exciting fun fair with engaging games and activities for students.",
-      imageUrl:
-        "https://images.unsplash.com/photo-1573164574393-7c07d9906d08?auto=format&fit=crop&q=80&w=1000",
+      imageUrl: "assets/Event images/funfairposter.PNG",
       isPast: true,
     },
     {
@@ -54,8 +53,8 @@ const Events = () => {
       location: "Online",
       description:
         "Learn the basics of APIs and how to use Postman for API testing and development.",
-      imageUrl:
-        "https://images.unsplash.com/photo-1581091225375-4e26eeed489c?auto=format&fit=crop&q=80&w=1000",
+      imageUrl: "assets/Event images/Postman.png",
+      isPast: true,
     },
   ];
 

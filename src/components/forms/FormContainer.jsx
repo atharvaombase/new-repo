@@ -1,15 +1,26 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
+import { useLocation } from "react-router-dom";
 import JoinForm from "./JoinForm";
 import ConstactForm from "./ContactForm";
 import { CSSTransition, SwitchTransition } from "react-transition-group";
 import "./form.css";
 
-const FormContainer = ({ events, setEvents }) => {
+const FormContainer = () => {
+  const location = useLocation();
+  const [events, setEvents] = useState("contact"); // Default value is "contact"
+
+  // Set the initial state of events based on the passed state
+  useEffect(() => {
+    if (location.state?.action) {
+      setEvents(location.state.action); // Set to "join" if that's the passed state
+    }
+  }, [location.state]);
+
   return (
     <>
       <section
         id="connect"
-        className=" connectsec bg-storm-darker button-container py-20 text-center"
+        className="connectsec bg-storm-darker button-container py-20 text-center"
       >
         <button
           aria-label="Contact Us"
@@ -36,18 +47,18 @@ const FormContainer = ({ events, setEvents }) => {
         >
           <div>
             {events === "join" ? (
-              <section id="join" className="py-20 bg-storm-darker">
+              <section id="join" className="py-16 bg-storm-darker">
                 <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
                   <h2 className="text-4xl font-extrabold text-white mb-8 text-center">
                     <span className="border-b-4 border-neon pb-2 uppercase tracking-wide">
                       Join Our Society
                     </span>
                   </h2>
-                  <JoinForm />
+                  <JoinForm className="decreased-top-margin" />
                 </div>
               </section>
             ) : (
-              <section id="contact" className=" contactsec py-20 bg-storm-dark">
+              <section id="contact" className="py-16 bg-storm-dark">
                 <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
                   <h2 className="text-4xl font-extrabold text-white mb-8 text-center">
                     <span className="border-b-4 border-neon pb-2 uppercase tracking-wide">

@@ -14,9 +14,9 @@
   font-weight: bold;
 }
 
-.connectsec,
-.contactsec {
-  padding: 40px;
+.py-16 {
+  padding-top: 2rem;
+  padding-bottom: 4rem;
 }
 
 .teamcontainer {
