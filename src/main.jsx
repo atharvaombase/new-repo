@@ -5,7 +5,7 @@ import App from "./components/routes/App.jsx";
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import FormContainer from "./components/forms/FormContainer";
 import { path } from "framer-motion/client";
-import Homepage from "./components/routes/homepage.jsx";
+import Homepage from "./components/routes/Homepage.jsx";
 
 const router = createBrowserRouter([
   {
