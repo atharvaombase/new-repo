@@ -5,7 +5,7 @@ const app = express();
 const PORT = process.env.PORT || 5000;
 
 // Replace with your actual MongoDB credentials
-const uri = "mongodb+srv://aaombase:<password>@cluster0.ustnk.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0";
+const uri = "mongodb+srv://aaombase:mdFnbwprusVgv9Xt@cluster0.ustnk.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0";
 
 // Create a MongoClient with a MongoClientOptions object
 const client = new MongoClient(uri, {
