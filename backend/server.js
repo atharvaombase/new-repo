@@ -26,7 +26,7 @@ const dataDir = ensureDataDir();
 
 // Middleware configuration
 app.use(cors({
-  origin: ['http://localhost:5173', 'https://codestormweb.vercel.app'],
+  origin: ['http://localhost:5173', 'https://new-repo-agru1g1qn-atharvaombases-projects.vercel.app'],
   credentials: true
 }));
 app.use(express.json());
