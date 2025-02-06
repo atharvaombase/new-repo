@@ -8,9 +8,9 @@ const Homepage = () => {
   return (
     <div className="min-h-screen bg-storm-darker">
       <Hero />
-      <AdSense adSlot="ca-pub-3198706909969680" />
+      {/* <AdSense adSlot="ca-pub-3198706909969680" /> */}
       <Events />
-      <AdSense adSlot="ca-pub-3198706909969680" />
+      {/* <AdSense adSlot="ca-pub-3198706909969680" /> */}
       <Team />
       <AdSense adSlot="ca-pub-3198706909969680" />
       <FacultyList />
