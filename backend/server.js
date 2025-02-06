@@ -24,36 +24,38 @@ const ensureDataDir = () => {
 
 const dataDir = ensureDataDir();
 
-// Middleware
+// Middleware configuration
 app.use(cors({
-  origin: ['http://localhost:5173', 'https://codestormweb.vercel.app/'],
+  origin: ['http://localhost:5173', 'https://codestormweb.vercel.app'],
   credentials: true
 }));
 app.use(express.json());
 
-// Helper function to append data to Excel file
-const appendToExcel = async (fileName, data) => {
+// Excel file handling helper function
+const appendToExcel = (fileName, data) => {
   try {
-    const filePath = path.join(__dirname, 'data', fileName);
-
+    const filePath = path.join(dataDir, fileName);
     let workbook;
+    let sheet;
+
     if (fs.existsSync(filePath)) {
       workbook = XLSX.readFile(filePath);
+      sheet = workbook.Sheets[workbook.SheetNames[0]];
     } else {
       workbook = XLSX.utils.book_new();
-      XLSX.utils.book_append_sheet(workbook, XLSX.utils.json_to_sheet([]), 'Sheet1');
+      const header = Object.keys(data);
+      sheet = XLSX.utils.json_to_sheet([], { header });
+      XLSX.utils.book_append_sheet(workbook, sheet, 'Submissions');
     }
 
-    const sheet = workbook.Sheets['Sheet1'];
-    const existingData = XLSX.utils.sheet_to_json(sheet);
-
+    const jsonData = XLSX.utils.sheet_to_json(sheet);
     data.submissionTime = new Date().toISOString();
-    existingData.push(data);
+    jsonData.push(data);
 
-    const newSheet = XLSX.utils.json_to_sheet(existingData);
-    workbook.Sheets['Sheet1'] = newSheet;
+    const newSheet = XLSX.utils.json_to_sheet(jsonData);
+    workbook.Sheets[workbook.SheetNames[0]] = newSheet;
 
-    await XLSX.writeFile(workbook, filePath);
+    XLSX.writeFile(workbook, filePath);
     return true;
   } catch (error) {
     console.error('Error in appendToExcel:', error);
@@ -61,7 +63,7 @@ const appendToExcel = async (fileName, data) => {
   }
 };
 
-// Basic health check
+// Health check endpoint
 app.get('/', (req, res) => {
   res.json({ status: 'Server is running' });
 });
@@ -119,6 +121,7 @@ app.post('/api/join', async (req, res) => {
   }
 });
 
+// Start server
 app.listen(PORT, () => {
   console.log(`Server running on port ${PORT}`);
   console.log(`Data directory: ${dataDir}`);
