@@ -1,6 +1,11 @@
 import React, { useEffect } from "react";
 import { Link, useNavigate, useLocation } from "react-router-dom";
-import { Menu, X, Code2, Github, Instagram, Linkedin } from "lucide-react";
+import { Menu, X, Code2 } from "lucide-react";
+import { FaInstagram } from "react-icons/fa";
+import { IoLogoLinkedin } from "react-icons/io5";
+import { FaCode } from "react-icons/fa6";
+
+import { SiGithub } from "react-icons/si";
 
 const Navbar = ({ events, setEvents }) => {
   const [isOpen, setIsOpen] = React.useState(false);
@@ -27,7 +32,9 @@ const Navbar = ({ events, setEvents }) => {
         <div className="flex items-center justify-between h-16">
           <div className="flex items-center">
             <div className="flex-shrink-0 ">
-              <Code2 className="h-8 w-8 text-neon" />
+              <FaCode className="h-8 w-8 text-neon" />
+
+              {/* <Code2 className="h-8 w-8 text-neon" /> */}
             </div>
 
             <div className="hidden md:block">
@@ -41,20 +48,20 @@ const Navbar = ({ events, setEvents }) => {
                 <a
                   href="#events"
                   onClick={() => handleNavigation("/", "#events")}
-                  className="text-gray-300 hover:text-neon px-3 py-2 rounded-md text-sm font-medium"
+                  className="text-white hover:text-neon px-3 py-2 rounded-md text-sm font-medium"
                 >
                   Events
                 </a>
                 <a
                   href="#team"
                   onClick={() => handleNavigation("/", "#team")}
-                  className="text-gray-300 hover:text-neon px-3 py-2 rounded-md text-sm font-medium"
+                  className="text-white hover:text-neon px-3 py-2 rounded-md text-sm font-medium"
                 >
                   Team
                 </a>
                 <Link
                   to="/forms"
-                  className="text-gray-300 hover:text-neon px-3 py-2 rounded-md text-sm font-medium"
+                  className="text-white hover:text-neon px-3 py-2 rounded-md text-sm font-medium"
                 >
                   Contact us
                 </Link>
@@ -64,27 +71,33 @@ const Navbar = ({ events, setEvents }) => {
           <div className="hidden md:flex items-center space-x-4">
             <a
               href=""
-              className="text-gray-300 hover:text-neon"
+              className="text-white hover:text-neon"
               target="_blank"
               rel="noopener noreferrer"
             >
-              <Github className="h-7 w-7" />
+              <SiGithub className="h-7 w-7" />
+
+              {/* <Github className="h-7 w-7" /> */}
             </a>
             <a
               href="https://www.instagram.com/codestorm_official/"
-              className="text-gray-300 hover:text-neon"
+              className="text-white hover:text-neon"
               target="_blank"
               rel="noopener noreferrer"
             >
-              <Instagram className="h-7 w-7" />
+              <FaInstagram className="h-7 w-7" />
+
+              {/* <Instagram className="h-7 w-7" /> */}
             </a>
             <a
               href="https://www.linkedin.com/company/codestorm-club-mescoe/posts/?feedView=all"
-              className="text-gray-300 hover:text-neon"
+              className="text-white hover:text-neon"
               target="_blank"
               rel="noopener noreferrer"
             >
-              <Linkedin className="h-7 w-7" />
+              <IoLogoLinkedin className="h-7 w-7" />
+
+              {/* <Linkedin className="h-7 w-7" /> */}
             </a>
           </div>
           <div className="md:hidden flex items-center">
@@ -115,20 +128,20 @@ const Navbar = ({ events, setEvents }) => {
             <a
               href="#events"
               onClick={() => handleNavigation("/", "#events")}
-              className="text-gray-300 hover:text-neon block px-3 py-2 rounded-md text-base font-medium"
+              className="text-white hover:text-neon block px-3 py-2 rounded-md text-base font-medium"
             >
               Events
             </a>
             <a
               href="#team"
               onClick={() => handleNavigation("/", "#team")}
-              className="text-gray-300 hover:text-neon block px-3 py-2 rounded-md text-base font-medium"
+              className="text-white hover:text-neon block px-3 py-2 rounded-md text-base font-medium"
             >
               Team
             </a>
             <Link
               to="/forms"
-              className="text-gray-300 hover:text-neon block px-3 py-2 rounded-md text-base font-medium"
+              className="text-white hover:text-neon block px-3 py-2 rounded-md text-base font-medium"
               onClick={() => setIsOpen(false)}
             >
               Contact us
