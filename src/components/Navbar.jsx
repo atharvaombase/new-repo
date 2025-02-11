@@ -1,6 +1,6 @@
 import React, { useEffect } from "react";
 import { Link, useNavigate, useLocation } from "react-router-dom";
-import { Menu, X, Code2 } from "lucide-react";
+import { Menu, X } from "lucide-react";
 import { FaInstagram } from "react-icons/fa";
 import { IoLogoLinkedin } from "react-icons/io5";
 import { FaCode } from "react-icons/fa6";
@@ -59,12 +59,68 @@ const Navbar = ({ events, setEvents }) => {
                 >
                   Team
                 </a>
-                <Link
+                {/* <Link
                   to="/forms"
                   className="text-white hover:text-neon px-3 py-2 rounded-md text-sm font-medium"
                 >
                   Contact us
-                </Link>
+                </Link> */}
+
+                <button
+                  id="dropdownDelayButton"
+                  data-dropdown-toggle="dropdownDelay"
+                  data-dropdown-delay="500"
+                  data-dropdown-trigger="hover"
+                  class="text-neon hover:bg-storm-light px-3 py-2 rounded-md text-sm font-medium flex items-center "
+                  type="button"
+                >
+                  Contact us{" "}
+                  <svg
+                    class="w-2.5 h-2.5 ms-3"
+                    aria-hidden="true"
+                    xmlns="http://www.w3.org/2000/svg"
+                    fill="none"
+                    viewBox="0 0 10 6"
+                  >
+                    <path
+                      stroke="currentColor"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      stroke-width="2"
+                      d="m1 1 4 4 4-4"
+                    />
+                  </svg>
+                </button>
+
+                {/* <!-- Dropdown menu --> */}
+                <div
+                  id="dropdownDelay"
+                  class="z-10 hidden bg-white divide-y divide-black rounded-lg shadow-sm w-44 dark:bg-black"
+                >
+                  <ul
+                    class="py-2 text-sm text-neon dark:text-neon"
+                    aria-labelledby="dropdownDelayButton"
+                  >
+                    <li>
+                      <Link
+                        to="/forms"
+                        class="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white"
+                        state={{ action: "contact" }}
+                      >
+                        Contact us
+                      </Link>
+                    </li>
+                    <li>
+                      <Link
+                        to="/forms"
+                        class="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white"
+                        state={{ action: "join" }}
+                      >
+                        Join us
+                      </Link>
+                    </li>
+                  </ul>
+                </div>
               </div>
             </div>
           </div>

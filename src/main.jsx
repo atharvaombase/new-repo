@@ -6,6 +6,8 @@ import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import FormContainer from "./components/forms/FormContainer";
 // import { path } from "framer-motion/client";
 import Homepage from "./components/routes/Homepage.jsx";
+import "flowbite";
+
 const router = createBrowserRouter([
   {
     path: "/",
